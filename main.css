@@ -11,6 +11,7 @@
 	align-items: center;
 	display: flex;
 	opacity: .9;
+	color: whitesmoke;
 }
 
 body {
@@ -93,9 +94,16 @@ body {
 	
 	width: 100%;
 	min-width: 300px;
-	height: 200px;
 	
 	border-radius: 15px;
+}
+
+#card1 {
+	height: 200px;
+}
+
+#card2 {
+	height: 90px;
 }
 
 .rgba {
@@ -106,7 +114,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    color: #fff;
 	border-radius: 15px;
 }
 
@@ -142,9 +149,17 @@ body {
 	height: 25px;
 	position: absolute;
 	top: 5px; left: 10px;
+	border-radius: 5px;
+}
+
+.laundries {
 	background: url(logo/laundries.gif) no-repeat center center;
 	background-size: cover;
-	border-radius: 5px;
+}
+
+.satsport {
+	background: url(logo/tennisball.gif) no-repeat center center;
+	background-size: cover;
 }
 
 span {
@@ -152,6 +167,7 @@ span {
 	display: block;
 	text-transform: uppercase;
 	opacity: .7;
+    color: #fff;
 }
 
 .card-date {
@@ -160,6 +176,7 @@ span {
 	top: 9px;
 	color:#fff;
 	opacity: .7;
+    color: #fff;
 }
 
 .card-content {
@@ -170,4 +187,5 @@ span {
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
 	line-height: .3;
 	font-weight:bold;
+    color: #fff;
 }
