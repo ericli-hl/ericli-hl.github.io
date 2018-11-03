@@ -7,7 +7,7 @@ function myFunction() {
 	if(mins < 10) {
 		mins = "0" + mins;
 	}
-	document.getElementById("time").innerHTML = hrs + ":" + mins;
+	document.getElementById("clock").innerHTML = hrs + ":" + mins;
 	var day;
 	switch (d.getDay()) {
     	case 0:

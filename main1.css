@@ -1,14 +1,101 @@
 @charset "UTF-8";
 /* CSS Document */
 
+.container {
+	position: absolute; 
+	top: 0; left: 0; 
+	
+	width: 100vw;
+}
 .bg {
 	position: fixed; 
 	top: 0; left: 0; 
+	z-index: -100; 
 	
-	width: 100%; 
-	height: 100%; 
+	width: 100vw; 
+	height: 100vh; 
 	
 	background-image: url("bg1.png"); 
 	background-size: auto 100vh;
 	background-position: center; 
+}
+
+.time {
+	position: relative; 
+	padding-top: 5vh;
+	z-index: 0; 
+	
+	width: 100vw; 
+	height: 30vh; 
+	
+	background-color: #F8EC3B; 
+}
+
+#clock, #date {
+	position: relative; 
+	margin-left: auto; 
+	margin-right: auto; 
+	z-index: 0; 
+	
+	width: fit-content; 
+	height: fit-content; 
+	
+	/* background-color: #fff; */ 
+	color: #fff; 
+	font-family: 'Fredoka One', cursive; 
+}
+
+#clock {
+	font-size: 5rem; 
+}
+
+#date {
+	font-size: 1.5rem; 
+}
+
+.main {
+	position: relative; 
+	margin-left: 10vw; 
+	
+	width: 80vw; 
+	height: 1200px; 
+	/* height: auto; */
+	
+	/* background-color: #1DD5CE; */ 
+	/* opacity: .2; */ 
+}
+
+.card {
+	position: relative;
+	z-index: 1; 
+	
+	width: 80vw; 
+	height: 100px; 
+	/* height: auto; */
+	
+	/* background-color: #A014CA; */ 
+	background-position: center; 
+	background-size: cover; 
+	
+	color: #fff; 
+}
+
+.card::after {
+	content: '';
+	
+	position: absolute; 
+	top:20px; left: 20px; 
+	z-index: -1; 
+	
+	width: calc(100% - 40px); 
+	height: calc(100% - 40px); 
+	
+	background-color: rgba(255,255,255,.8); 
+	background-image: url("bg1.png"); 
+	background-position: center; 
+	background-size: cover; 
+	background-attachment: fixed; 
+	filter: blur(20px); 
+		
+	display: block; 
 }
