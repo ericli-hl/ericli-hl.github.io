@@ -170,7 +170,7 @@ body {
 	font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif"; 
 	font-size: .9rem; 
 	color: #000; 
-	font-weight: 200; 
+	font-weight: 500; 
 }
 
 .logo {
@@ -212,7 +212,7 @@ body {
 
 #title {
 	text-transform: uppercase; 
-	letter-spacing: 1.4px; 
+	letter-spacing: .5px; 
 }
 
 #update {
