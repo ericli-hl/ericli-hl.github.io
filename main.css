@@ -68,13 +68,13 @@ body {
 	width: 100%;
 	height: fit-content;
 		
-	font-size: 20vw;
+	font-size: 4.5rem;
 }
 
 .date {
 	position: relative;
 	
-	font-size: 1.1em;
+	font-size: 1.1rem;
 }
 
 .card-frame {
@@ -141,7 +141,7 @@ body {
 	background-size: cover;
 	color:#fff;
 	letter-spacing: .5px;
-	font-size: .8em;
+	font-size: .8rem;
 }
 
 .logo {
