@@ -5,31 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Untitled Document</title>
 <link href="function1.css" rel="stylesheet" type="text/css">
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+	function showT() {
+		$(".tt").attr("src","https://ressched.mentonegrammar.net/myTT.php?username=Lixx026")
+		$(".tt").removeClass("na");
+		document.getElementById("tt").style.height = "400px";
+	}
+	
+	function showFy() {
+		$(".baidufanyi").attr("src","https://fanyi.baidu.com")
+		$(".baidufanyi").removeClass("na");
+		document.getElementById("fanyi").style.height = "400px";
+	}
+</script>
 </head>
 
 <body onload="getTextNode()">
 	<div class="bg"></div>
 	<div class="container">
 <!-- ------------------------------------------------------ -->
-		<a class="card" href="https://mail.mentonegrammar.net/owa/#path=/mail" style="height: 120px">
+		<a class="card" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1541251370&rver=7.0.6737.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26RpsCsrfState%3dfa20047a-823f-2321-f955-6b8cb8ad17dc&id=292841&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=90015" style="height: 120px">
 			<div class="name">
-				<span>email</span>
+				<span>email - outlook</span>
 			</div>
 		</a>
 <!-- ------------------------------------------------------ -->
-		<div class="card">
+		<a class="card" href="https://mail.mentonegrammar.net/owa/#path=/mail" style="height: 120px">
 			<div class="name">
-				<span>TT</span>
+				<span>email - lixx026</span>
 			</div>
-			<iframe class="fanyi" src="https://ressched.mentonegrammar.net/myTT.php?username=Lixx026" width="90%" height="300px" frameborder=0></iframe>
-		</div>
-<!-- ------------------------------------------------------ -->
-		<div class="card">
-			<div class="name">
-				<span>翻译</span>
-			</div>
-			<iframe class="fanyi" src="https://fanyi.baidu.com" width="90%" height="300px" frameborder=0></iframe>
-		</div>
+		</a>
 <!-- ------------------------------------------------------ -->
 		<a class="card" href="https://lms.mentonegrammar.net/d2l/home/6677" style="height: 120px">
 			<div class="name">
@@ -37,6 +43,21 @@
 			</div>
 		</a>
 <!-- ------------------------------------------------------ -->
+		<div class="card" onclick="showT()" id="tt">
+			<div class="name">
+				<span>Timetable</span>
+			</div>
+			<iframe class="fanyi na tt" src="" width="90%" height="300px" frameborder=0></iframe>
+		</div>
+<!-- ------------------------------------------------------ -->
+		<div class="card" onclick="showFy()" id="fanyi">
+			<div class="name">
+				<span>翻译</span>
+			</div>
+			<iframe class="fanyi na baidufanyi" src="" width="90%" height="300px" frameborder=0></iframe>
+		</div>
+<!-- ------------------------------------------------------ -->
+
 
 
 	</div>
