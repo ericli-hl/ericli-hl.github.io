@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {	
+	overflow-x: hidden; 
+	font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif"; 
+}
+
+.bg {
+	position: fixed; 
+	top: 0; left: 0; 
+	
+	width: 100vw; 
+	height: 100vh; 
+	
+	background-image: linear-gradient(to top, #56ccf2, #2f80ed); 
+	
+}
+
+.container {
+	position: absolute; 
+	top: 0; left: 0; 
+	margin-left: 10vw; 
+	
+	width: 80vw; 
+	height: 1200px; 
+}
+
+.card {
+	position: relative; 
+	margin-top: 15px; 
+	z-index: 1;
+	
+	width: 100%; 
+	height: 800px; 
+}
+
+.card::after {
+	content: ""; 
+	position: absolute; 
+	top: 0; left: 0; 
+	z-index: -1;
+	
+	width: 100%; 
+	height: 100%; 
+	
+	background-color: #fff; 
+	border-radius: 10px; 
+	opacity: .8; 
+}
+
+.name {
+	position: relative; 
+	padding-top: 20px; 
+	padding-bottom: 20px; 
+	padding-left: 30px; 
+	z-index: 1; 
+	
+	width: calc(100% - 30px); 
+	
+	background-color: #fff; 
+	border-radius: 10px 10px 0 0; 
+	opacity: .9; 
+	font-weight: 300; 
+}
+
+.fanyi {
+	margin-top: 20px; 
+	margin-left: 5%; 
+	
+	/* transform: scale(.75); */
+}
