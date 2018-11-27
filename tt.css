@@ -26,7 +26,7 @@ body {
 	background: #fff; 
 	position: absolute;
 	top:0; left: 0;
-	width: 100%; height: 200px; 
+	width: 100%; height: 140px; 
 	border-radius: 10px; 
 	opacity: .9; 
 	z-index: -1; 
@@ -35,7 +35,7 @@ body {
 .card {
 	margin-top: 15px; 
 	position: relative;
-	height: 200px;
+	height: 140px;
 }
 
 .cardtitle {
@@ -85,7 +85,6 @@ body {
 	font-size: .7rem;
 	border: .5px solid #56ccf2; 
 	padding: 5px 15px 5px 15px;
-	margin-top: 5px;
 	position: relative;
 	margin-left: 8px;
 	border-radius: 50px;
@@ -97,4 +96,32 @@ body {
 	font-size: .9rem;
 	margin-left: 15px;
 	opacity: .5;
+}
+
+.nextp {
+	opacity: .8;
+}
+
+.commfunc {
+	margin-top: 15px; 
+	position: relative;
+	height: 140px;
+}
+
+.commfunc span {
+	display: inline-block;
+	margin-left: 4px;
+	margin-right: 2px;
+
+	width:fit-content;
+	font-size: .7rem;
+	border: .5px solid #fff; 
+	padding: 5px 15px 5px 15px;
+	position: relative;
+	border-radius: 50px;
+	color: #fff; 
+}
+
+.commfunc span:first-child {
+	margin-left: 15px;
 }
