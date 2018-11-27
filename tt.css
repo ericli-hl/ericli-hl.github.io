@@ -1,5 +1,8 @@
 @charset "UTF-8";
 /* CSS Document */
+.na {
+	display: none;
+}
 
 body {
 	font-family: Helvetica, Arial, "sans-serif"; 
@@ -30,6 +33,31 @@ body {
 	border-radius: 10px; 
 	opacity: .9; 
 	z-index: -1; 
+}
+
+.reminder::after {
+	content: '';
+	background: #fff; 
+	position: absolute;
+	top:0; left: 0;
+	width: 100%; height: 115px; 
+	border-radius: 10px; 
+	opacity: .9; 
+	z-index: -1; 
+}
+
+.reminder {
+	margin-top: 15px; 
+	position: relative;
+	height: 115px;
+}
+
+.reminder .cardtitle .remark {
+	background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+.reminder {
+	color: red;
 }
 
 .card {
