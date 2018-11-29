@@ -6,10 +6,18 @@
 <title>我的课表</title>
 <link href="tt.css" rel="stylesheet" type="text/css">
 <script src="tt.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
 </head>
 
-<body>
-<div id="test" style="color:#fff">test</div>
+<body onload="myFunction()">
+<div id="nianfen" class="na" style="color:#fff">test</div>
+<div id="yuefen"  class="na" style="color:#fff">test</div>
+<div id="riqi"  class="na" style="color:#fff">test</div>
+<div id="xingqiji"  class="na" style="color:#fff">test</div>
+<div id="cshi"  class="na" style="color:#fff">test</div>
+<div id="cfen"  class="na" style="color:#fff">test</div>
+<div id="test"  class="na" style="color:#fff">test</div>
+
 	<div id="bgcolor"></div>
 	<div id="bodyframe">
 			<div class="dynamic na">
@@ -18,17 +26,38 @@
 			<div class="dynamic na">
 			<span>获取 Sports Team Sheets</span>
 			</div>
-			<div class="dynamic na">
+			<div class="dynamic na zao" onclick="window.open('https://lms.mentonegrammar.net/d2l/home/6677')">
 			<span>获取 Daily Notices</span>
 			</div>
-			<div class="dynamic na">
+			<div class="dynamic na zao" onclick="window.open('https://mail.mentonegrammar.net/owa/')">
 			<span>获取今天的 Cover</span>
 			</div>
-			<div class="dynamic na">
+			<div class="dynamic na zao recess afterschool lunchtime">
+			<span>先灌瓶水，再去趟洗手间吧～</span>
+			</div>
+			<div class="dynamic na attendance">
 			<span>查询我的 Attendance</span>
 			</div>
-			<div class="dynamic na">
+			<div class="dynamic na mingtiankebiao">
 			<span>下面是明天的课程</span>
+			</div>
+			<div class="dynamic na mingtiankebiao mtkbcss">
+			<span class="mtkb">p1 tmr</span>
+			</div>
+			<div class="dynamic na mingtiankebiao mtkbcss">
+			<span class="mtkb">p1 tmr</span>
+			</div>
+			<div class="dynamic na mingtiankebiao mtkbcss">
+			<span class="mtkb">p1 tmr</span>
+			</div>
+			<div class="dynamic na mingtiankebiao mtkbcss">
+			<span class="mtkb">p1 tmr</span>
+			</div>
+			<div class="dynamic na mingtiankebiao mtkbcss">
+			<span class="mtkb">p1 tmr</span>
+			</div>
+			<div class="dynamic na mingtiankebiao mtkbcss">
+			<span class="mtkb">p1 tmr</span>
 			</div>
 			<div class="reminder na">
 			<div class="cardtitle">
@@ -40,32 +69,32 @@
 			<span class="classlist">Class List</span>
 			<span class="classlist">LMS对应页</span>
 		</div>
-		<div class="card">
+		<div class="card" id="dangqiancard">
 			<div class="cardtitle">
 				<div class="remark">当前</div>
-				<span class="subject">English</span>
-				<span class="venue">L002</span>
+				<span class="subject" id="dangqiansubj">sth</span>
+				<span class="venue" id="dangqianvenue">sth</span>
 			</div>
-			<span class="over">9:38 下课</span>
-			<span class="classlist">Class List</span>
-			<span class="classlist">LMS对应页</span>
-			<div class="currenttime">现在 9:31</div>
+			<span class="over" id="dangqianover">sthsth</span>
+			<a class="classlist dangqianclist" target="_blank">Class List</a>
+			<a class="classlist dangqianlms" target="_blank">LMS对应页</a>
+			<div class="currenttime"></div>
 		</div>
-		<div class="card nextp">
+		<div class="card nextp" id="xiajiecard">
 			<div class="cardtitle">
 				<div class="remark">下节</div>
-				<span class="subject">Methods</span>
-				<span class="venue">F132</span>
+				<span class="subject" id="xiajiesubj">sth</span>
+				<span class="venue" id="xiajievenue">sth</span>
 			</div>
-			<span class="over">9:38 上课</span>
-			<span class="classlist">Class List</span>
-			<span class="classlist">LMS对应页</span>
-			<div class="currenttime">现在 9:31</div>
+			<span class="over" id="xiajieshangke">sthsth</span>
+			<a class="classlist xiajieclist" target="_blank">Class List</a>
+			<a class="classlist xiajielms" target="_blank">LMS对应页</a>
+			<div class="currenttime"></div>
 		</div>
 		<div class="commfunc">
-			<div><span>SPS</span>
-			<span>Outlook</span>
-			<span>Exchange</span></div>
+			<div><a href="https://sps.mentonegrammar.net/" target="_blank"><span>SPS</span></a>
+			<a href="https://www.outlook.com/" target="_blank"><span>Outlook</span></a>
+			<a href="https://mail.mentonegrammar.net/" target="_blank"><span>Exchange</span></a></div>
 			<div style="margin-top: 10px"><span>完整课表</span>
 			<span>当天课表</span></div>
 		</div>

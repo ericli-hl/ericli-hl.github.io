@@ -77,6 +77,7 @@ body {
 .reminder .classlist {
 	background: linear-gradient(to right, #ff416c, #ff4b2b);
 	border: none;
+	color:#fff;
 }
 
 .reminder {
@@ -139,8 +140,6 @@ body {
 	position: relative;
 	margin-left: 8px;
 	border-radius: 50px;
-	background: linear-gradient(to top, #56ccf2, #2f80ed); 
-	color: #fff; 
 }
 
 .currenttime {
@@ -161,8 +160,8 @@ body {
 
 .commfunc span {
 	display: inline-block;
-	margin-left: 4px;
-	margin-right: 2px;
+	margin-left: 5px;
+	margin-right: 0;
 
 	width:fit-content;
 	font-size: .7rem;
@@ -173,6 +172,17 @@ body {
 	color: #fff; 
 }
 
-.commfunc span:first-child {
-	margin-left: 15px;
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: #000;
+}
+
+.mtkbcss::after {
+	background: #fff;
+	opacity: 1;
+}
+
+.mtkb {
+	color: #000;
 }
