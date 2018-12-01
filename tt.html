@@ -5,54 +5,116 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>我的课表</title>
 <link href="tt.css" rel="stylesheet" type="text/css">
+<script src="tt.js"></script>
 </head>
 
-<body>
+<body onload="main()">
 	<div id="bg-color-control"></div>
 	<div id="container">
 		<div id="content">
 			<div id="section-notification">
 				<div class="notification">
-					<span>先灌瓶水，再去趟洗手间吧～</span>
+					<span id="week-and-day">今天是 Week 0 Day 0</span>
 				</div>
 				<div class="notification">
-					<span>其他通知</span>
+					<span>先灌瓶水，再去趟洗手间吧～</span>
 				</div>
-			</div>
-			<div id="section-card">
-				<div class="current-period">
-					<div class="title">
-						<span class="remark">当前</span>
-						<span id="current-subject">SubjectName</span>
-						<span class="venue" id="current-venue">String</span>
-					</div>
-					<div class="detail">
-						<span id="time-class-over">下课时间</span><br />
-						<span id="current-time">当前时间</span><br /><br />
-						<span class="lms" id="current-lms">戳我进入本课程LMS页</span>
-					</div>
+				<div class="notification na">
+					<span>获取 Daily Notices</span>
 				</div>
-				<div class="next-period">
-					<div class="title">
-						<span class="remark">下节</span>
-						<span id="next-subject">SubjectName</span>
-						<span class="venue" id="next-venue">String</span>
-					</div>
-					<div class="detail">
-						<span id="time-next-on">上课时间</span><br />
-						<span id="current-time">当前时间</span><br /><br />
-						<span class="lms" id="next-lms">戳我进入本课程LMS页</span>
-					</div>
+				<div class="notification na">
+					<span>获取今天的 Cover</span>
 				</div>
-				<div class="acc-reminder">
-					
+				<div class="notification na">
+					<span>今天 Accounting 在 Period </span>
+				</div>
+				<div class="notification na">
+					<span>查询我的 Attendance</span>
+				</div>
+				<div class="notification na">
+					<span>获取 Sports Training 表格</span>
+				</div>
+				<div class="notification na">
+					<span>获取 Sat Sport 的 Team Sheets</span>
 				</div>
 			</div>
 			<div id="section-button">
 				<span>SPS</span>
 				<span>Outlook</span>
 				<span>Exchange</span>
-				<span>动态课表</span>
+				<span>百度翻译</span>
+				<span>Google翻译</span>
+				<span>官网课表</span>
+				<span>今天的课</span>
+			</div>
+			<div id="section-card">
+				<div class="current-period">
+					<div class="title">
+						<span class="remark">当前</span>
+						<span id="current-subject" class="subject-name">SubjectName</span>
+						<span class="venue" id="current-venue">String</span>
+					</div>
+					<div class="detail">
+						<span id="time-class-over">下课时间</span><br />
+						<span class="current-time">当前时间</span><br />
+						<span id="current-class-serial">Class</span><br /><br />
+						<span class="lms" id="current-lms">戳我进入本课程LMS页</span>
+					</div>
+				</div>
+				<div class="next-period">
+					<div class="title">
+						<span class="remark">下节</span>
+						<span id="next-subject" class="subject-name">SubjectName</span>
+						<span class="venue" id="next-venue">String</span>
+					</div>
+					<div class="detail">
+						<span id="next-period-starts-at">上课时间</span><br />
+						<span class="current-time">当前时间</span><br />
+						<span id="next-period-over">下课时间</span><br />
+						<span id="next-class-serial">Class</span><br /><br />
+						<span class="lms" id="next-lms">戳我进入本课程LMS页</span>
+					</div>
+				</div>
+				<div class="schedule na" id="schedule-today">
+					<div class="title">
+						<span class="remark">今天</span>
+						<span>Week <span id="this-week">0</span> Day <span id="day-today">0</span></span>
+					</div>
+					<div class="detail ke">
+							<span class="remark">AM</span>
+							<span>1 SubjN</span>
+							<span>2 SubjN</span>
+							<span>3 SubjN</span><br />
+							<span>4 SubjN</span>
+							<span>5 SubjN</span>
+							<span>6 SubjN</span><br />
+							<span>7 SubjN</span>
+							<span>8 SubjN</span><br />
+							<span class="remark">PM</span>
+							<span>9 SubjN</span>
+							<span>10 SubjN</span>
+					</div>
+				</div>
+				<div class="schedule na" id="schedule-tmr">
+					<div class="title">
+						<span class="remark">明天</span>
+						<span>Week <span id="this-week">0</span> Day <span id="day-today">0</span></span>
+					</div>
+					<div class="detail ke">
+							<span class="remark">AM</span>
+							<span>1 SubjN</span>
+							<span>2 SubjN</span>
+							<span>3 SubjN</span><br />
+							<span>4 SubjN</span>
+							<span>5 SubjN</span>
+							<span>6 SubjN</span><br />
+							<span>7 SubjN</span>
+							<span>8 SubjN</span><br />
+							<span class="remark">PM</span>
+							<span>9 SubjN</span>
+							<span>10 SubjN</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

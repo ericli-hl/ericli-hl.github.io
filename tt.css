@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
 
+.na {
+	display: none;
+}
+
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif";
 	font-weight: 900;
@@ -74,7 +78,7 @@ body {
 	position: relative;
 	z-index: auto;
 	
-	width: 100%; height: 180px;
+	width: 100%; height: 215px;
 	margin-bottom: 8px;
 }
 
@@ -86,7 +90,7 @@ body {
 	top: 0; left: 0;
 	z-index: -99;
 	
-	width: 100%; height: 180px;
+	width: 100%; height: 215px;
 	background: #fff;
 	opacity: .7;
 	border-radius: 10px;
@@ -106,7 +110,7 @@ body {
 .remark {
 	display: inline-block;
 	width:fit-content; height: auto;
-	font-size: .8rem;
+	font-size: .7rem;
 	background: linear-gradient(to top, #56ccf2, #2f80ed); 
 	color:#fff;
 	border-radius: 50px;
@@ -139,7 +143,7 @@ body {
 	padding:5px 8px 5px 8px;
 }
 
-#section-button {
+#section-card {
 	margin-bottom: 50px;
 }
 
@@ -147,8 +151,43 @@ body {
 	display: inline-block;
 	font-size: .8rem;
 	font-weight: 400;
-	background: #fff;
-	border-radius: 50px;
+	background: #F9FAFB;
+	border-radius: 6px;
 	padding:5px 8px 5px 8px;
 	margin-bottom: 8px;
+	border: 1px solid #D3D8E2;
+}
+
+#section-button span:hover {
+	background:#EFEFEF;
+	cursor:pointer;
+}
+
+.schedule {
+	position: relative;
+	z-index: auto;
+	
+	width: 100%; height: 245px;
+	margin-bottom: 8px;
+}
+
+.schedule::after {
+	content: '';
+	
+	position: absolute;
+	top: 0; left: 0;
+	z-index: -99;
+	
+	width: 100%; height: 245px;
+	background: #fff; opacity: .7;
+	border-radius: 10px;
+}
+
+.ke span {
+	display: inline-block;
+	background: #fff;
+	border-radius: 50px;
+	padding: 5px 8px 5px 8px;
+	margin: 4px 4px 4px 0;
+	font-weight: 400;
 }
