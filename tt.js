@@ -39,8 +39,13 @@ function main() {
 	document.getElementById("week-and-day").innerHTML = "今天是 Week " + thisWeek + " Day " + dayToday;
 	// document.getElementById("current-hour").innerHTML = currentHour;
 	// document.getElementById("current-min").innerHTML = currentMin;
+	if(currentMin < 10) {
+		document.getElementsByClassName("current-time")[0].innerHTML = "当前时间 " + currentHour + ":0" + currentMin;
+		document.getElementsByClassName("current-time")[1].innerHTML = "当前时间 " + currentHour + ":0" + currentMin;
+	} else {
 	document.getElementsByClassName("current-time")[0].innerHTML = "当前时间 " + currentHour + ":" + currentMin;
 	document.getElementsByClassName("current-time")[1].innerHTML = "当前时间 " + currentHour + ":" + currentMin;
+	}
 	
 	// -----------------------------------------------------------------------------------
 	var currentPeriod;
