@@ -1,102 +1,59 @@
 <!doctype html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>我的课表</title>
 <link href="tt.css" rel="stylesheet" type="text/css">
-<script src="tt.js"></script>
-<script src="jquery-3.3.1.min.js"></script>
 </head>
 
-<body onload="myFunction()">
-<div id="nianfen" class="na" style="color:#fff">test</div>
-<div id="yuefen"  class="na" style="color:#fff">test</div>
-<div id="riqi"  class="na" style="color:#fff">test</div>
-<div id="xingqiji"  class="na" style="color:#fff">test</div>
-<div id="cshi"  class="na" style="color:#fff">test</div>
-<div id="cfen"  class="na" style="color:#fff">test</div>
-<div id="test"  class="na" style="color:#fff">test</div>
-
-	<div id="bgcolor"></div>
-	<div id="bodyframe">
-			<div class="dynamic na">
-			<span>获取 Sports Training 表格</span>
+<body>
+	<div id="bg-color-control"></div>
+	<div id="container">
+		<div id="content">
+			<div id="section-notification">
+				<div class="notification">
+					<span>先灌瓶水，再去趟洗手间吧～</span>
+				</div>
+				<div class="notification">
+					<span>其他通知</span>
+				</div>
 			</div>
-			<div class="dynamic na">
-			<span>获取 Sports Team Sheets</span>
+			<div id="section-card">
+				<div class="current-period">
+					<div class="title">
+						<span class="remark">当前</span>
+						<span id="current-subject">SubjectName</span>
+						<span class="venue" id="current-venue">String</span>
+					</div>
+					<div class="detail">
+						<span id="time-class-over">下课时间</span><br />
+						<span id="current-time">当前时间</span><br /><br />
+						<span class="lms" id="current-lms">戳我进入本课程LMS页</span>
+					</div>
+				</div>
+				<div class="next-period">
+					<div class="title">
+						<span class="remark">下节</span>
+						<span id="next-subject">SubjectName</span>
+						<span class="venue" id="next-venue">String</span>
+					</div>
+					<div class="detail">
+						<span id="time-next-on">上课时间</span><br />
+						<span id="current-time">当前时间</span><br /><br />
+						<span class="lms" id="next-lms">戳我进入本课程LMS页</span>
+					</div>
+				</div>
+				<div class="acc-reminder">
+					
+				</div>
 			</div>
-			<div class="dynamic na zao" onclick="window.open('https://lms.mentonegrammar.net/d2l/home/6677')">
-			<span>获取 Daily Notices</span>
+			<div id="section-button">
+				<span>SPS</span>
+				<span>Outlook</span>
+				<span>Exchange</span>
+				<span>动态课表</span>
 			</div>
-			<div class="dynamic na zao" onclick="window.open('https://mail.mentonegrammar.net/owa/')">
-			<span>获取今天的 Cover</span>
-			</div>
-			<div class="dynamic na zao recess afterschool lunchtime">
-			<span>先灌瓶水，再去趟洗手间吧～</span>
-			</div>
-			<div class="dynamic na attendance">
-			<span>查询我的 Attendance</span>
-			</div>
-			<div class="dynamic na mingtiankebiao">
-			<span>下面是明天的课程</span>
-			</div>
-			<div class="dynamic na mingtiankebiao mtkbcss">
-			<span class="mtkb">p1 tmr</span>
-			</div>
-			<div class="dynamic na mingtiankebiao mtkbcss">
-			<span class="mtkb">p1 tmr</span>
-			</div>
-			<div class="dynamic na mingtiankebiao mtkbcss">
-			<span class="mtkb">p1 tmr</span>
-			</div>
-			<div class="dynamic na mingtiankebiao mtkbcss">
-			<span class="mtkb">p1 tmr</span>
-			</div>
-			<div class="dynamic na mingtiankebiao mtkbcss">
-			<span class="mtkb">p1 tmr</span>
-			</div>
-			<div class="dynamic na mingtiankebiao mtkbcss">
-			<span class="mtkb">p1 tmr</span>
-			</div>
-			<div class="reminder na">
-			<div class="cardtitle">
-				<div class="remark">提醒</div>
-				<span class="subject">Accounting</span>
-				<span class="venue">F008</span>
-			</div>
-			<span class="over">Period 2</span>
-			<span class="classlist">Class List</span>
-			<span class="classlist">LMS对应页</span>
-		</div>
-		<div class="card" id="dangqiancard">
-			<div class="cardtitle">
-				<div class="remark">当前</div>
-				<span class="subject" id="dangqiansubj">sth</span>
-				<span class="venue" id="dangqianvenue">sth</span>
-			</div>
-			<span class="over" id="dangqianover">sthsth</span>
-			<a class="classlist dangqianclist" target="_blank">Class List</a>
-			<a class="classlist dangqianlms" target="_blank">LMS对应页</a>
-			<div class="currenttime"></div>
-		</div>
-		<div class="card nextp" id="xiajiecard">
-			<div class="cardtitle">
-				<div class="remark">下节</div>
-				<span class="subject" id="xiajiesubj">sth</span>
-				<span class="venue" id="xiajievenue">sth</span>
-			</div>
-			<span class="over" id="xiajieshangke">sthsth</span>
-			<a class="classlist xiajieclist" target="_blank">Class List</a>
-			<a class="classlist xiajielms" target="_blank">LMS对应页</a>
-			<div class="currenttime"></div>
-		</div>
-		<div class="commfunc">
-			<div><a href="https://sps.mentonegrammar.net/" target="_blank"><span>SPS</span></a>
-			<a href="https://www.outlook.com/" target="_blank"><span>Outlook</span></a>
-			<a href="https://mail.mentonegrammar.net/" target="_blank"><span>Exchange</span></a></div>
-			<div style="margin-top: 10px"><span>完整课表</span>
-			<span>当天课表</span></div>
 		</div>
 	</div>
 </body>

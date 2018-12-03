@@ -1,192 +1,99 @@
 // JavaScript Document
 
-myFunction();
+var d = new Date();
+var thisMonthJs = d.getMonth(); // thisMonthJs === 10
+var thisMonth = thisMonthJs + 1; // thisMonth === 11
+var dateToday = d.getDate(); // dateToday === 30
+var dayToday = d.getDay(); // dayToday === 5
+var currentHour = d.getHours(); // currentHour = 21
+var currentMin = d.getMinutes(); // currentMin = 34
 
+var week1InNov = [30];
+var week1InDec = [10,11,12];
+var weekDetect; // weekDetect === week1InNov = [30]
+var thisWeek = 2; // thisWeek = 1
 
-function myFunction() {
+var currentPeriod = "-";
+
+function main() {
 	"use strict";
-	var d = new Date();
-	var nian = d.getFullYear();
-	document.getElementById("nianfen").innerHTML = nian;
-	var yue = d.getMonth();
-	document.getElementById("yuefen").innerHTML = yue;
-	var ri = d.getDate();
-	document.getElementById("riqi").innerHTML = ri;
 	
-	var week12;
-	if(nian === 2018 && yue === 10) {
-		week12 = 1;
+	switch(thisMonth) {
+		case 11:
+			weekDetect = week1InNov;
+			break;
+		case 12:
+			weekDetect = week1InDec;
+			break;
+		default:
+			weekDetect = "";
+			break;
 	}
-	
-	var xingqi = d.getDay();
-	document.getElementById("xingqiji").innerHTML = "星期" + xingqi;
-	
-	var shi = d.getHours();
-	var fen = d.getMinutes();
-	document.getElementById("cshi").innerHTML = shi;
-	document.getElementById("cfen").innerHTML = fen;
-	document.getElementsByClassName("currenttime")[0].innerHTML = "现在 " + shi + ":" + fen;
-	document.getElementsByClassName("currenttime")[1].innerHTML = "现在 " + shi + ":" + fen;
 
-	var keday4 = ["English", "Methods", "Acc", "Assembly", "Chem", "StudyPeriod"];
-	var keday5 = ["StudyPeriod", "Spec", "Methods", "English", "Acc", "Chem"];
-	
-	var ke;
-	var ketmr;
-	var cke;
-	var nextke;
-	var xiake;
-	var shangke;
-	if(week12 === 1 && xingqi === 4) {
-		ke = keday4;
-		ketmr = keday5;
-	}
-	
-	if((shi < 8) || (shi === 8 && fen < 40)) {
-		$("#dangqiancard").addClass("na");
-		nextke = ke[0];
-		shangke = "8:40 上课";
-		$(".zao").removeClass("na");
-	}
-	
-	if((shi === 9 && fen < 38) || (shi === 8 && fen > 39)) {
-		$("#dangqiancard").removeClass("na");
-		cke = ke[0];
-		nextke = ke[1];
-		xiake = "9:38 下课";
-		shangke = "9:38 上课";
-	}
-	
-	if((shi === 9 && fen > 37) || (shi === 10 && fen < 36)) {
-		cke = ke[1];
-		nextke = ke[2];
-		xiake = "10:36 下课";
-		shangke = "10:56 上课";
-	}
-	
-	if((shi === 10) && (fen > 35 && fen <56)) {
-		$("#dangqiancard").addClass("na");
-		$(".recess").removeClass("na");
-		cke = ke[1];
-		nextke = ke[2];
-		xiake = "10:36 下课";
-		shangke = "10:56 上课";
-	}
-	
-	if(((xingqi === 2) || (xingqi === 4)) && ((shi === 10 && fen > 55) || (shi === 11) || (shi === 12 && fen < 23))) {
-		$("#dangqiancard").removeClass("na");
-		cke = ke[2];
-		nextke = ke[3];
-		xiake = "12:23 下课";
-		shangke = "12:23 开始";
-		$(".xiajieclist, .xiajielms").addClass("na");
-	}
-	
-	if(((xingqi === 2) || (xingqi === 4)) && ((shi === 12 && fen > 22) || (shi === 12 && fen < 52))) {
-		cke = ke[3];
-		nextke = ke[4];
-		xiake = "计划 12:52 结束";
-		shangke = "13:42 上课";
-		$(".dangqianclist, .dangqianlms").addClass("na");
-	}
-	
-	if(((xingqi === 1) || (xingqi === 2) || (xingqi === 4) || (xingqi === 5)) && ((shi === 12 && fen > 51) || (shi === 13 && fen < 52))) {
-		$("#dangqiancard").addClass("na");
-		$(".lunchtime").removeClass("na");
-		nextke = ke[4];
-		shangke = "13:42 上课";
-	}
-	
-	if((shi === 13 && fen > 41) || (shi === 14 && fen < 40)) {
-		$("#dangqiancard").removeClass("na");
-		cke = ke[4];
-		nextke = ke[5];
-		xiake = "14:40 下课";
-		shangke = "14:40 上课";
-	}
-	
-	if((shi === 14 && fen > 39) || (shi === 15 && fen < 38)) {
-		$("#xiajiecard").addClass("na");
-		cke = ke[5];
-		xiake = "15:38 下课";
-	}
-	
-	if((shi === 15 && fen > 37) || (shi > 15)) {
-		$("#dangqiancard").addClass("na");
-		$(".afterschool").removeClass("na");
-		$("#xiajiecard").addClass("na");
-		$(".mingtiankebiao").removeClass("na");
-		$(".attendance").removeClass("na");
-		var i;
-		for(i=0; i < 6; i++) {
-			document.getElementsByClassName("mtkb")[i].innerHTML = ketmr[i];
+	for(var i = 0; i < weekDetect.length; i++){
+		if(dateToday === weekDetect[i]){
+			thisWeek = 1;
 		}
 	}
-
-	document.getElementById("dangqiansubj").innerHTML = cke;
-	document.getElementById("xiajiesubj").innerHTML = nextke;
-	document.getElementById("dangqianover").innerHTML = xiake;
-	document.getElementById("xiajieshangke").innerHTML = shangke;
 	
-	switch(cke) {
-		case "English":
-			document.getElementById("dangqianvenue").innerHTML = "L002";
-			$(".dangqianclist").attr("href","https://ressched.mentonegrammar.net/classlists.php?subclass=EN093++++++++++A&tch_code=DNH&rView=List&form_Data=");
-			$(".dangqianlms").attr("href","https://lms.mentonegrammar.net/d2l/home/16802");
-			break;
-		case "Methods":
-			document.getElementById("dangqianvenue").innerHTML = "F132";
-			$(".dangqianclist").attr("href","https://ressched.mentonegrammar.net/classlists.php?subclass=MA113++++++++++D&tch_code=KXM&rView=List&form_Data=");
-			$(".dangqianlms").attr("href","https://lms.mentonegrammar.net/d2l/home/16834");
-			break;
-		case "Acc":
-			document.getElementById("dangqianvenue").innerHTML = "F008";
-			$(".dangqianclist").attr("href","https://ressched.mentonegrammar.net/classlists.php?subclass=AC033++++++++++A&tch_code=VSB&rView=List&form_Data=");
-			$(".dangqianlms").attr("href","https://lms.mentonegrammar.net/d2l/home/16734");
-			break;
-		case "Chem":
-			document.getElementById("dangqianvenue").innerHTML = "F119";
-			$(".dangqianclist").attr("href","https://ressched.mentonegrammar.net/classlists.php?subclass=CH033++++++++++A&tch_code=PXW&rView=List&form_Data=");
-			$(".dangqianlms").attr("href","https://lms.mentonegrammar.net/d2l/home/16747");
-			break;
-		case "Spec":
-			document.getElementById("dangqianvenue").innerHTML = "F028";
-			$(".dangqianclist").attr("href","https://ressched.mentonegrammar.net/classlists.php?subclass=MA093++++++++++A&tch_code=KXM&rView=List&form_Data=");
-			$(".dangqianlms").attr("href","https://lms.mentonegrammar.net/d2l/home/16855");
-			break;
-		default:
-			document.getElementById("dangqianvenue").innerHTML = "";
-			break;
+	// -----------------------------------------------------------------------------------
+	if((currentHour < 8) || (currentHour === 8 && currentMin < 40)) {
+		currentPeriod = "preschool"; // Pre-school
+	} else if((currentHour === 8 && currentMin > 39) || (currentHour === 9 && currentMin < 38)) {
+		currentPeriod = 1; // Period 1
+	} else if((currentHour === 9 && currentMin > 37) || (currentHour === 10 && currentMin < 36)) {
+		currentPeriod = 2; // Period 2
+	} else if(currentHour === 10 && currentMin > 35 && currentMin < 56) {
+		currentPeriod = "recess"; // Recess
+	} else if((currentHour === 10 && currentMin > 55) || (currentHour === 11 && currentMin < 54)) {
+		currentPeriod = 3; // Period 3
+	} else if((dayToday === 1 || 5) && ((currentHour === 11 && currentMin > 53) || (currentHour === 12 && currentMin < 23))) {
+		currentPeriod = 4; // Period 4
+	} else if((dayToday === 2 || 3 || 4) && ((currentHour === 11 && currentMin > 53) || (currentHour === 12 && currentMin < 23))) {
+		currentPeriod = 4; // Period 4
+	} else if((currentHour === 12 && currentMin > 22) || (currentHour === 12 && currentMin < 52)) {
+		if(dayToday === 1 || dayToday === 5) {
+			currentPeriod = 4; // Period 4
+		} else if (dayToday === 2 || dayToday === 4) {
+			currentPeriod = "Assembly"; // Assembly
+		} else if (dayToday === 3) {
+			currentPeriod = "Lunchtime"; // Lunchtime
+		}
+	} else if((currentHour === 12 && currentMin > 51) || (currentHour === 13 && currentMin < 15)) {
+		currentPeriod = "Lunchtime"; // Lunchtime
+	} else if((currentHour === 13 && currentMin > 14) || (currentHour === 13 && currentMin < 42)) {
+		if(dayToday === 1 || dayToday === 2 || dayToday === 4 || dayToday === 5) {
+			currentPeriod = "Lunchtime"; // Lunchtime
+		} else {
+			currentPeriod = "Sports"; // Sports
+		}
+	} else if((currentHour === 13 && currentMin > 41) || (currentHour === 14 && currentMin < 40)) {
+		if(dayToday === 1 || dayToday === 2 || dayToday === 4 || dayToday === 5) {
+			currentPeriod = 5; // Period 5
+		} else {
+			currentPeriod = "Sports"; // Sports
+		}
+	} else if((currentHour === 14 && currentMin > 40) || (currentHour === 15 && currentMin < 38)) {
+		if(dayToday === 1 || dayToday === 2 || dayToday === 4 || dayToday === 5) {
+			currentPeriod = 6; // Period 6
+		} else {
+			currentPeriod = "Sports"; // Sports
+		}
+	} else {
+		currentPeriod = "afterschool"; // After school
 	}
+	// -----------------------------------------------------------------------------------
 	
-	switch(nextke) {
-		case "English":
-			document.getElementById("xiajievenue").innerHTML = "L002";
-			$(".xiajieclist").attr("href","https://ressched.mentonegrammar.net/classlists.php?subclass=EN093++++++++++A&tch_code=DNH&rView=List&form_Data=");
-			$(".xiajielms").attr("href","https://lms.mentonegrammar.net/d2l/home/16802");
-			break;
-		case "Methods":
-			document.getElementById("xiajievenue").innerHTML = "F132";
-			$(".xiajieclist").attr("href","https://ressched.mentonegrammar.net/classlists.php?subclass=MA113++++++++++D&tch_code=KXM&rView=List&form_Data=");
-			$(".xiajielms").attr("href","https://lms.mentonegrammar.net/d2l/home/16834");
-			break;
-		case "Acc":
-			document.getElementById("xiajievenue").innerHTML = "F008";
-			$(".xiajieclist").attr("href","https://ressched.mentonegrammar.net/classlists.php?subclass=AC033++++++++++A&tch_code=VSB&rView=List&form_Data=");
-			$(".xiajielms").attr("href","https://lms.mentonegrammar.net/d2l/home/16734");
-			break;
-		case "Chem":
-			document.getElementById("xiajievenue").innerHTML = "F119";
-			$(".xiajieclist").attr("href","https://ressched.mentonegrammar.net/classlists.php?subclass=CH033++++++++++A&tch_code=PXW&rView=List&form_Data=");
-			$(".xiajielms").attr("href","https://lms.mentonegrammar.net/d2l/home/16747");
-			break;
-		case "Spec":
-			document.getElementById("xiajievenue").innerHTML = "F028";
-			$(".xiajieclist").attr("href","https://ressched.mentonegrammar.net/classlists.php?subclass=MA093++++++++++A&tch_code=KXM&rView=List&form_Data=");
-			$(".xiajielms").attr("href","https://lms.mentonegrammar.net/d2l/home/16855");
-			break;
-		default:
-			document.getElementById("xiajievenue").innerHTML = "";
-			break;
-	}
+	document.getElementById("week").innerHTML = thisWeek;
+	document.getElementById("curday").innerHTML = dayToday;
+	document.getElementById("current-period").innerHTML = currentPeriod;
 }
+
+
+
+
+
+
+
+
+

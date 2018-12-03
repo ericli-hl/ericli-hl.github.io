@@ -1,0 +1,188 @@
+@charset "UTF-8";
+/* CSS Document */
+.na {
+	display: none;
+}
+
+body {
+	font-family: Helvetica, Arial, "sans-serif"; 
+}
+
+#bgcolor {
+	background: linear-gradient(to top, #56ccf2, #2f80ed); 
+	position: fixed;
+	top: 0; left: 0; 
+	width: 100vw; height: 100vh;
+	z-index: -100;
+}
+
+#bodyframe {
+	background: transparent; 
+	position: absolute; 
+	top: 50px; left: 10vw;
+	width: 80vw; height: 3000px; 
+	z-index: 100; 
+}
+
+.dynamic::after {
+	content: '';
+	background: #000; 
+	position: absolute;
+	top:0; left: 0;
+	width: 100%; height: 48px; 
+	border-radius: 10px; 
+	opacity: .3; 
+	z-index: -1; 
+}
+
+.dynamic {
+	margin-top: 8px; 
+	position: relative;
+	height: 48px;
+	color: #fff;
+}
+
+.card::after {
+	content: '';
+	background: #fff; 
+	position: absolute;
+	top:0; left: 0;
+	width: 100%; height: 200px; 
+	border-radius: 10px; 
+	opacity: .9; 
+	z-index: -1; 
+}
+
+.reminder::after {
+	content: '';
+	background: #fff; 
+	position: absolute;
+	top:0; left: 0;
+	width: 100%; height: 115px; 
+	border-radius: 10px; 
+	opacity: .9; 
+	z-index: -1; 
+}
+
+.reminder {
+	margin-top: 15px; 
+	position: relative;
+	height: 115px;
+}
+
+.reminder .cardtitle .remark {
+	background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+.reminder .classlist {
+	background: linear-gradient(to right, #ff416c, #ff4b2b);
+	border: none;
+	color:#fff;
+}
+
+.reminder {
+	color: red;
+}
+
+.card {
+	margin-top: 15px; 
+	position: relative;
+	height: 200px;
+}
+
+.cardtitle {
+	background: #fff; 
+	position: relative;
+	top: 0; left: 0;
+	width: 100%; height: 60px;
+	border-radius: 10px 10px 0 0; 
+}
+
+.cardtitle .remark {
+	width: fit-content; 
+	padding: 5px 8px 5px 8px;
+	transform: translateY(65%); 
+	font-size: .7rem;
+	background: linear-gradient(to top, #56ccf2, #2f80ed); 
+	color: #fff; 
+	border-radius: 50px;
+	margin-left: 10px;
+}
+
+.cardtitle span {
+	display:inline-block; 
+	transform: translateY(-20%); 
+	font-size: 1rem;
+}
+
+.subject {
+	margin-left: 60px; 
+}
+
+.venue {
+	position: absolute;
+	right: 25px;
+}
+
+.over, .dynamic span {
+	width:fit-content;
+	margin-top: 15px;
+	margin-left: 15px;
+	font-size: .9rem;
+	display: inline-block;
+}
+
+.classlist {
+	width:fit-content;
+	font-size: .7rem;
+	border: .5px solid #56ccf2; 
+	padding: 5px 15px 5px 15px;
+	position: relative;
+	margin-left: 12px;
+	border-radius: 50px;
+}
+
+.currenttime {
+	font-size: .9rem;
+	margin-left: 15px;
+	opacity: .5;
+}
+
+.nextp {
+	opacity: .8;
+}
+
+.commfunc {
+	margin-top: 15px; 
+	position: relative;
+	height: 140px;
+}
+
+.commfunc span {
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 0;
+
+	width:fit-content;
+	font-size: .7rem;
+	border: .5px solid #fff; 
+	padding: 5px 15px 5px 15px;
+	position: relative;
+	border-radius: 50px;
+	color: #fff; 
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: #000;
+}
+
+.mtkbcss::after {
+	background: #fff;
+	opacity: 1;
+}
+
+.mtkb {
+	color: #000;
+}
